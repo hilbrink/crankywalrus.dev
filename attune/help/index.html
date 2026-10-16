@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Attune help and support</title>
+<meta name="description" content="How to use Attune for Mac and iPhone: recording, speakers, minutes, voice notes, settings, costs, and how to get support.">
+<link rel="icon" href="/attune/img/icon.png">
+<style>
+:root {
+  --bg: #f6f6f4; --panel: #ffffff; --ink: #1d1d1f; --muted: #6e6e73; --line: #e3e3e0; --accent: #2f5bea;
+  --chip: #eef0f6; --tip: #eef6ff; --tip-line: #c9dcff; --warn: #fff4e5; --warn-line: #f3d3a3;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #151517; --panel: #1f1f22; --ink: #ececef; --muted: #9a9aa2; --line: #333338; --accent: #6d8dff;
+    --chip: #2a2c35; --tip: #1c2638; --tip-line: #2e4166; --warn: #33291a; --warn-line: #5c4626; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; }
+a { color: var(--accent); }
+.layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); max-width: 1280px; margin: 0 auto; }
+nav { position: sticky; top: 0; height: 100vh; overflow: auto; padding: 28px 18px 40px 24px; border-right: 1px solid var(--line); }
+nav .brand { font-weight: 700; font-size: 18px; display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+nav .brand::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+nav .ver { color: var(--muted); font-size: 12px; margin-bottom: 18px; }
+nav ol { list-style: none; padding: 0; margin: 0; counter-reset: ch; }
+nav li { counter-increment: ch; }
+nav li a { display: block; padding: 5px 10px; border-radius: 8px; color: var(--ink); text-decoration: none; font-size: 14px; }
+nav li a::before { content: counter(ch) ". "; color: var(--muted); }
+nav li a:hover, nav li a.on { background: var(--chip); }
+nav input { width: 100%; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink);
+  font: inherit; font-size: 13px; margin-bottom: 14px; }
+main { padding: 36px 48px 120px; min-width: 0; }
+h1 { font-size: 32px; margin: 0 0 6px; }
+.lead { font-size: 17px; color: var(--muted); margin: 0 0 28px; max-width: 760px; }
+section { margin: 0 0 56px; scroll-margin-top: 20px; }
+h2 { font-size: 24px; margin: 0 0 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+h3 { font-size: 17px; margin: 26px 0 8px; }
+p, ul, ol.steps { max-width: 780px; }
+ol.steps { padding-left: 22px; } ol.steps li { margin: 4px 0; }
+figure { margin: 18px 0 26px; }
+figure img { display: block; max-width: 100%; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 4px 22px rgba(0,0,0,.07); }
+figure.half img { max-width: 680px; }
+figcaption { color: var(--muted); font-size: 13px; margin-top: 8px; max-width: 780px; }
+.k-close { color: #d9822b; } .k-bad { color: #d64545; }
+figcaption .anim { display: inline-block; font-size: 11px; font-weight: 600; background: var(--chip); border-radius: 6px; padding: 0 6px; margin-right: 6px; color: var(--ink); }
+kbd { font: 12px ui-monospace, Menlo, monospace; background: var(--panel); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 1px 6px; }
+.tip, .note { max-width: 780px; border: 1px solid var(--tip-line); background: var(--tip); border-radius: 10px; padding: 10px 14px; margin: 14px 0; }
+.note { border-color: var(--warn-line); background: var(--warn); }
+.tip b:first-child, .note b:first-child { display: block; margin-bottom: 2px; }
+table { border-collapse: collapse; margin: 12px 0 20px; max-width: 820px; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .03em; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; max-width: 900px; margin: 18px 0 30px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; text-decoration: none; color: var(--ink); }
+.card b { display: block; margin-bottom: 2px; } .card span { color: var(--muted); font-size: 13px; }
+.card:hover { border-color: var(--accent); }
+details { max-width: 780px; border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px; margin: 8px 0; background: var(--panel); }
+summary { cursor: pointer; font-weight: 600; }
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+  nav { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+  main { padding: 24px 16px 80px; }
+}
+.site { display: flex; align-items: center; justify-content: space-between; max-width: 1280px; margin: 0 auto;
+  padding: 16px 24px; border-bottom: 1px solid var(--line); }
+.site .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; color: var(--ink); text-decoration: none; }
+.site nav { position: static; height: auto; overflow: visible; padding: 0; border: 0; }
+.site nav a { margin-left: 20px; color: var(--muted); text-decoration: none; font-size: 14px; }
+.site nav a:hover, .site nav a.here { color: var(--ink); }
+footer.site-foot { border-top: 1px solid var(--line); padding: 22px 24px 40px; color: var(--muted); font-size: 13px;
+  max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 860px) { .site { padding: 14px 16px; } .site nav a { margin-left: 12px; } }
+</style>
+</head>
+<body>
+<header class="site">
+  <a class="logo" href="/"><img src="/walrus.svg" alt="" width="30" height="30">Cranky Walrus</a>
+  <nav><a href="/attune/">Attune</a><a href="/attune/help/" class="here">Help</a><a href="#support">Support</a><a href="/attune/privacy/">Privacy</a></nav>
+</header>
+<div class="layout">
+<nav>
+  <div class="brand">Attune Help</div>
+  <div class="ver">Version 1.0 · all examples use invented people and companies</div>
+  <input id="find" type="search" placeholder="Search the help…" autocomplete="off">
+  <ol id="toc">
+    <li><a href="#welcome">Welcome</a></li>
+    <li><a href="#start">Getting started</a></li>
+    <li><a href="#record">Recording a meeting</a></li>
+    <li><a href="#meetings">Finding meetings</a></li>
+    <li><a href="#meeting">A meeting: transcript and speakers</a></li>
+    <li><a href="#outputs">Minutes, Teams and WhatsApp messages</a></li>
+    <li><a href="#ask">Ask AI</a></li>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#notes">Voice notes</a></li>
+    <li><a href="#iphone">The iPhone app</a></li>
+    <li><a href="#speakers">Speakers and the voice library</a></li>
+    <li><a href="#settings">Settings</a></li>
+    <li><a href="#tokens">Tokenomics: what it costs</a></li>
+    <li><a href="#privacy">Privacy and confidential meetings</a></li>
+    <li><a href="#keys">Keyboard shortcuts</a></li>
+    <li><a href="#licence">Licence</a></li>
+    <li><a href="#trouble">Troubleshooting and FAQ</a></li>
+    <li><a href="#support">Support</a></li>
+  </ol>
+</nav>
+<main>
+
+<section id="welcome">
+  <h1>Attune help and support</h1>
+  <p class="lead">Attune records your meetings on your Mac, writes the transcript with the right name next to every line,
+  and turns it into minutes, short messages and answers. You decide, per meeting, what may leave your Mac.</p>
+  <div class="cards">
+    <a class="card" href="#start"><b>First time?</b><span>Install, allow access, set up your AI — 10 minutes.</span></a>
+    <a class="card" href="#record"><b>Record a meeting</b><span>One click, or let Attune notice the call.</span></a>
+    <a class="card" href="#outputs"><b>Minutes in one click</b><span>Minutes, email, Teams or WhatsApp message.</span></a>
+    <a class="card" href="#notes"><b>Voice notes</b><span>Talk to Attune; it sorts, summarises and drafts.</span></a>
+  </div>
+  <h3>What Attune does for you</h3>
+  <ul>
+    <li><b>Records both sides of a call</b> — your microphone and everything your Mac plays — without a bot joining the meeting.</li>
+    <li><b>Knows who is speaking.</b> Name a voice once; Attune recognises it in every later meeting.</li>
+    <li><b>Writes minutes and messages</b> in your formats: minutes with a TL;DR, an email summary, a Teams or WhatsApp message.</li>
+    <li><b>Answers questions</b> about one meeting or all of them, with quotes you can check.</li>
+    <li><b>Voice notes</b>: say what's on your mind; Attune files it per client, keeps personal things apart and drafts the emails you ask for.</li>
+    <li><b>Shows what it costs</b> in AI tokens, per meeting and per month.</li>
+  </ul>
+</section>
+
+<section id="start">
+  <h2>Getting started</h2>
+  <h3>Install</h3>
+  <ol class="steps">
+    <li><a href="/attune/#get">Download Attune</a> (Macs with Apple silicon, macOS 14.4 or later). Open <b>Attune-1.0.0.dmg</b> and drag <b>Attune</b> into <b>Applications</b>. Open it from there.</li>
+    <li>macOS asks for <b>Microphone</b> and <b>System Audio Recording</b> access the first time you record. Allow both — the first records you, the second the other participants.</li>
+    <li>Attune lives in the window and in the menu bar (the waveform icon). Closing the window keeps it running, so calls are still noticed.</li>
+  </ol>
+  <h3>Tell Attune who you are</h3>
+  <p>Open <code>~/Library/Application Support/Attune/config.json</code> in TextEdit and replace the examples with your name,
+  company, notes folder (for example your Obsidian vault), your email domains and the languages you speak in meetings.
+  Attune only transcribes in those languages, which makes it more accurate.</p>
+  <h3>Choose your engines</h3>
+  <figure><img src="media/settings.png" alt="Settings, General"><figcaption>Settings › General: the transcription engine and the AI provider.</figcaption></figure>
+  <table>
+    <tr><th>Job</th><th>Choices</th><th>Good to know</th></tr>
+    <tr><td>Transcription</td><td>OpenAI · Whisper (on this Mac) · Apple (on this Mac)</td><td>OpenAI is the most accurate on difficult audio; Whisper and Apple never send audio anywhere.</td></tr>
+    <tr><td>AI for minutes, topics, Ask AI</td><td>Claude subscription or API · OpenAI · ChatGPT subscription · built-in model</td><td>A subscription needs the <code>claude</code> or <code>codex</code> app signed in once. The built-in model runs on your Mac.</td></tr>
+  </table>
+  <p>Click <b>Test AI provider</b> to check the connection. Local models download the first time they're needed (a few GB, once).</p>
+  <h3>Mark yourself</h3>
+  <p>In <b>Speakers</b>, open your own profile and click <b>This is me</b>. Minutes then list your tasks separately and Ask AI answers for you.</p>
+  <div class="tip"><b>Tip</b>Record one short test meeting (a call with a colleague) before an important one. You'll see the whole flow once and know your microphone works.</div>
+</section>
+
+<section id="record">
+  <h2>Recording a meeting</h2>
+  <figure><img src="media/record.png" alt="The Record screen"><figcaption>The Record screen. The checkbox makes a meeting confidential: everything stays on your Mac.</figcaption></figure>
+  <h3>Start and stop</h3>
+  <ul>
+    <li><b>Start:</b> the big red button, <kbd>⌘R</kbd>, or <b>Start Recording</b> in the menu bar.</li>
+    <li><b>Let Attune notice the call:</b> when a Teams or WhatsApp call starts, Attune asks <i>Record / Confidential / Not now</i>. In Settings › Recording it can also start and stop by itself.</li>
+    <li><b>Pause</b> (<kbd>⌘P</kbd>) leaves a stretch out of the recording. <b>Stop</b> (<kbd>⌘S</kbd>) sends the meeting to processing — you can start the next meeting right away.</li>
+  </ul>
+  <figure><img src="media/record-recording.png" alt="Recording in progress"><figcaption>During a meeting: timer and levels for you and the others, Capture slide, and notes with a timestamp. The card stays at the top while you scroll.</figcaption></figure>
+  <h3>During the call</h3>
+  <ul>
+    <li><b>Notes</b> — type and press <kbd>Enter</kbd>. Each note gets the time you started typing and ends up in the minutes.</li>
+    <li><b>Live transcript</b> — updated every few minutes, so you can check what was said or ask a quick question.</li>
+    <li><b>Slides</b> — see <a href="#slides">Slides</a>: capture the slide that's shared right now with <kbd>⌃⌥S</kbd>.</li>
+  </ul>
+  <div class="note"><b>Recording other people</b>Tell participants you're recording, and follow your organisation's policy and the law where you and they are.</div>
+</section>
+
+<section id="meetings">
+  <h2>Finding meetings</h2>
+  <figure><img src="media/meetings.png" alt="Meetings by date"><figcaption>Meetings by month, week and day — the day sits in the margin. Badges show client participants, iPhone recordings and whether a meeting was published.</figcaption></figure>
+  <ul>
+    <li><b>By date or by client</b> — the switch at the top. A meeting with two clients appears under both.</li>
+    <li><b>Fold</b> a month, week or client by clicking its heading; <kbd>⌥</kbd>-click folds every heading at that level. <b>Fold all</b> gives you an overview in one click. Attune remembers what you folded.</li>
+    <li><b>Search</b> — type a client, person, topic or date ("Contoso last week") for an instant result. Press <kbd>Enter</kbd> and the AI reads your question ("where did we discuss pricing?") and searches the transcripts too.</li>
+    <li><b>Voice command</b> — hold <kbd>⌥ Space</kbd> and say it: "open the last meeting with Priya".</li>
+  </ul>
+  <figure class="half"><img src="media/meetings-by-client.png" alt="Meetings by client"><figcaption>By client, then by week.</figcaption></figure>
+</section>
+
+<section id="meeting">
+  <h2>A meeting: transcript and speakers</h2>
+  <figure><img src="media/meeting.png" alt="A meeting"><figcaption>A finished meeting: client, topics, speakers, outputs and the transcript with a name on every line.</figcaption></figure>
+  <h3>Listen and correct</h3>
+  <ul>
+    <li>Click a line and press <kbd>Space</kbd> to play the meeting from there.</li>
+    <li>Press <kbd>Delete</kbd> to remove a line (for example an echo of someone else under your name) — with undo.</li>
+    <li>Click a speaker's name on a line to give that line to someone else.</li>
+  </ul>
+  <h3>Name a voice once</h3>
+  <p>New voices appear as <b>Speaker 01</b>, <b>Speaker 02</b> in orange, and in the <b>Unidentified</b> bar. Click one: the speaker menu lets you
+  show only their parts, delete everything they said, or re-assign them to a person — Attune suggests people whose voice sounds similar.
+  Type a new name as "Name, Company" to create someone. From then on Attune recognises that voice.</p>
+  <figure><img src="media/name-a-voice.gif" alt="Naming a voice"><figcaption><span class="anim">ANIMATION</span>Naming a new voice: click it, type "Name, Company", press Enter and confirm.</figcaption></figure>
+  <figure class="half"><img src="media/speaker-menu.png" alt="Speaker menu"><figcaption>The speaker menu — the same from the Speakers row and from the Unidentified bar.</figcaption></figure>
+  <h3>Publish</h3>
+  <p><b>Publish transcript</b> saves the transcript to your output folders (Settings › Output). The button then shows when you published,
+  and turns amber when the meeting changed afterwards — publish again to update the file.</p>
+</section>
+
+<section id="outputs">
+  <h2>Minutes, Teams and WhatsApp messages</h2>
+  <figure class="half"><img src="media/create-output-menu.png" alt="Create output menu"><figcaption><b>Create output</b> lists every format you have.</figcaption></figure>
+  <table>
+    <tr><th>Format</th><th>What you get</th></tr>
+    <tr><td>Meeting minutes</td><td>TL;DR, summary, decisions, action items with owners, and your own tasks.</td></tr>
+    <tr><td>Email summary</td><td>A short summary to paste into an email to the participants.</td></tr>
+    <tr><td>Teams message</td><td>Under 125 words: "I had a call with …", then the questions with their answers, what was agreed, and the actions.</td></tr>
+    <tr><td>WhatsApp message</td><td>Under 85 words, in WhatsApp's own formatting.</td></tr>
+  </table>
+  <figure><img src="media/create-output.gif" alt="Creating a Teams message"><figcaption><span class="anim">ANIMATION</span>Create output › Teams message.</figcaption></figure>
+  <figure><img src="media/minutes.png" alt="Minutes"><figcaption>Minutes. <b>Copy</b> pastes with formatting into Outlook or Teams; save as Markdown or Word.</figcaption></figure>
+  <figure class="half"><img src="media/teams-message.png" alt="Teams message"><figcaption>A Teams message: questions with answers, agreements, actions.</figcaption></figure>
+  <h3>Change it with AI</h3>
+  <p>Under the text, type an instruction — "translate to German", "shorter", "from my perspective", or a question like "who was there?" — and press <kbd>⌘↵</kbd>.
+  <b>Undo</b> and <b>Restore original</b> bring back earlier versions.</p>
+  <h3>Your own formats</h3>
+  <p>In Settings › <b>Output formats</b> you edit the instructions of each format or add your own (a status report, a client recap…).
+  Placeholders such as <code>{title}</code>, <code>{date}</code>, <code>{participants}</code> and <code>{me}</code> are filled in.
+  A limit like "at most 100 words" is enforced: longer texts are shortened automatically.</p>
+  <figure><img src="media/settings-formats.png" alt="Output formats"><figcaption>Settings › Output formats.</figcaption></figure>
+</section>
+
+<section id="ask">
+  <h2>Ask AI</h2>
+  <p>Click <b>Ask AI</b> in a meeting and ask in plain words: "short summary", "what did I promise?", "what changed since last week?".
+  Answers come from what was said and from your notes, with timestamps. Add related meetings to ask across them.</p>
+  <figure><img src="media/ask-ai.png" alt="Ask AI"><figcaption>Ask AI about a meeting.</figcaption></figure>
+  <p><b>Ask AI on the Meetings page</b> searches all your meetings and returns points with quotes that were checked against the transcripts.</p>
+</section>
+
+<section id="slides">
+  <h2>Slides</h2>
+  <p>Slides shared in a Teams meeting can be kept next to the transcript. The AI describes each slide and its figures, and the minutes refer to them.</p>
+  <ul>
+    <li><b>Capture slide</b> — on the Record screen, in the menu bar, or <kbd>⌃⌥S</kbd> from any app: keeps the slide that's shared <i>right now</i>, nothing more.</li>
+    <li><b>Read slides automatically</b> — Settings › Recording (an experiment). Attune follows the shared screen and keeps every new slide. <b>Stop reading slides</b> ends this for the rest of the meeting; slides so far are kept.</li>
+  </ul>
+  <figure><img src="media/slides.png" alt="Slides tab"><figcaption>The Slides tab of a meeting: each slide with its time, a description and the figures on it.</figcaption></figure>
+  <div class="tip"><b>First time</b>macOS asks for Screen Recording access the first time Attune captures a slide.</div>
+</section>
+
+<section id="notes">
+  <h2>Voice notes</h2>
+  <p>Say (or type) whatever is on your mind — a reminder, a thought about a client, a to-do. Attune transcribes it, summarises it,
+  splits it per client, keeps personal things apart and writes the drafts you ask for.</p>
+  <h3>Make a voice note</h3>
+  <ul>
+    <li><b>From any app:</b> press <kbd>⌃⌥N</kbd>, talk, press <kbd>⌃⌥N</kbd> again to save. The menu bar icon turns into a teal microphone while you talk.</li>
+    <li><b>In Attune:</b> the card at the top of <b>Voice notes</b> — record, type, or both.</li>
+    <li><b>On your iPhone:</b> see <a href="#iphone">The iPhone app</a>.</li>
+  </ul>
+  <figure><img src="media/voice-notes.png" alt="Voice notes"><figcaption>Voice notes by date, with the recorder card on top. Each note shows its clients, topics and drafts — not the raw text.</figcaption></figure>
+  <h3>Three ways to look at them</h3>
+  <table>
+    <tr><th>View</th><th>Shows</th></tr>
+    <tr><td>By date</td><td>Month › week, with the day in the margin.</td></tr>
+    <tr><td>By client</td><td>Client › week. A note about two clients is under both, each time showing what was said about <i>that</i> client. Work without a client and <b>Personal</b> come last.</td></tr>
+    <tr><td>Weekly per client</td><td>One note per client per week, combined from all voice notes — no repeats, the latest state wins.</td></tr>
+  </table>
+  <figure><img src="media/voice-notes-views.gif" alt="Switching voice note views"><figcaption><span class="anim">ANIMATION</span>Switching views and folding.</figcaption></figure>
+  <figure class="half"><img src="media/voice-notes-weekly.png" alt="Weekly per client"><figcaption>Weekly per client: a combined note per client, with links to the voice notes it came from.</figcaption></figure>
+  <h3>How Attune splits a note</h3>
+  <ul>
+    <li>Every point goes to exactly one client — the client whose matter it is about.</li>
+    <li>A client mentioned only as a reference ("reuse the Fabrikam structure for Northwind") stays with the client being discussed.</li>
+    <li>Family, friends, holidays, health and private errands go to <b>Personal</b>, never into a client note.</li>
+  </ul>
+  <h3>Drafts</h3>
+  <p>Ask for something in the note — "draft an email to Priya about…", "write a WhatsApp to Sam that…", "make a to-do list for…" —
+  and Attune writes it in your style. Emails open in Mail with one click.</p>
+  <figure><img src="media/voice-note-drafts.png" alt="A voice note with drafts"><figcaption>A voice note with an email draft and a to-do list.</figcaption></figure>
+  <p>Teach Attune your style in Settings › Output › <b>How I write</b>: describe how you write, and paste a few emails you sent.</p>
+  <figure class="half"><img src="media/settings-output.png" alt="How I write"><figcaption>Settings › Output: How I write.</figcaption></figure>
+</section>
+
+<section id="iphone">
+  <h2>The iPhone app</h2>
+  <p>The Attune iPhone app records voice notes and meetings in the room — everyone around the table on one recording.
+  Recordings go to your Mac through iCloud: it works even when the Mac or the app is closed; they arrive when it wakes up.</p>
+  <ul>
+    <li><b>Note</b> — talk (with live text on the phone) or type; Stop sends it.</li>
+    <li><b>Meeting</b> — put the phone in the middle of the table; it keeps recording with the screen locked. The Mac tells the speakers apart; the meeting appears under Meetings with an <b>iPhone</b> badge.</li>
+    <li><b>History</b> — every recording with its status (<i>Sent</i> › <i>On Mac</i> › <i>Done</i>), the summary and drafts from the Mac, ready to share to WhatsApp or Teams.</li>
+  </ul>
+  <div class="note"><b>Availability</b>The iPhone app isn't in the App Store yet; a TestFlight beta is coming soon. Both devices need the same Apple ID with iCloud Drive on.</div>
+</section>
+
+<section id="speakers">
+  <h2>Speakers and the voice library</h2>
+  <p>Every time you name a voice in a meeting, Attune keeps a short <b>voice sample</b> (a voiceprint) of that person.
+  In the next meeting it compares each new voice with all the samples it has and fills in the name when one person
+  clearly matches. The Speakers page is where you look after that library.</p>
+  <figure><img src="media/speakers.png" alt="Speakers"><figcaption>Everyone Attune knows, with company, meetings and the number of voice samples.</figcaption></figure>
+  <h3>A person's profile</h3>
+  <p>Click a person to open their profile: name, company and pronouns (used by the minutes and Ask AI when they write about
+  that person), <b>This is me</b> for your own profile, and the meetings they were in. Under <b>Voice</b> you see how healthy
+  their voice profile is.</p>
+  <figure><img src="media/speaker-voice.png" alt="Voice health of a person"><figcaption>Tom's voice profile: consistency, each sample as a dot, who he sounds closest to, and two suspect samples.</figcaption></figure>
+  <ul>
+    <li><b>Consistency</b> — how alike the person's own samples are (0 to 1). Above 0.75 is consistent; lower usually means
+      different microphones, a headset versus a meeting room, or a sample that isn't theirs.</li>
+    <li><b>The dots</b> — one per sample, placed by how much it resembles the person's other samples; the top row is
+      Teams/system audio, the bottom row your microphone. <b class="k-close">Orange</b> is close to
+      someone else, <b class="k-bad">red</b> sounds <i>more</i> like someone else than like this person.</li>
+    <li><b>Sounds closest to</b> — the people whose voice resembles this one most. Above 0.45 Attune starts suggesting the
+      other person; close to 0.70 the two can be confused and named automatically as each other.</li>
+    <li><b>Suspect samples</b> — samples that match someone else better than this profile, with ▶ to listen and buttons
+      to move or set them aside.</li>
+  </ul>
+  <h3>The voice map</h3>
+  <p>Switch from <b>List</b> to <b>Voice map</b> to see the whole library at once. Every dot is one voice sample; similar
+  voices sit close together, so each person should form one tight group of their own colour (● microphone, ○ Teams/system).
+  Hover a dot to see whose it is; click it to open that person.</p>
+  <figure><img src="media/voice-map.png" alt="The voice map"><figcaption>The voice map: one cluster per person. Two clusters that touch belong to people who sound alike.</figcaption></figure>
+  <figure><img src="media/voice-map-person.png" alt="One person on the voice map"><figcaption>With a person open (or a name in the search box) only their samples stay coloured. Two of Tom's dots sit inside Jordan's cluster: those samples are really Jordan.</figcaption></figure>
+  <h3>Remove samples that are too close to someone else</h3>
+  <p>A wrong sample in a profile makes Attune confuse two people: a sample of Jordan filed under Tom pulls Tom's profile
+  towards Jordan, so Jordan gets labelled Tom in the next meeting. This happens with labels imported from Quill, when two
+  people speak at the same time, or after one wrong click. Taking such samples out makes matching more reliable for both
+  people.</p>
+  <ol class="steps">
+    <li>Open the person (from the list or by clicking their dot on the map).</li>
+    <li>Click a <b class="k-bad">red</b> or <b class="k-close">orange</b> dot. The
+      sample opens: which meeting it came from, ▶ <b>Listen</b> to what was said, and how much it resembles this person and
+      the closest other person.</li>
+    <li>Listen. If it is someone else, choose <b>Move to …</b> (it becomes a sample of the right person) or <b>Set aside</b>
+      (no longer used for anyone). If it is really this person — a bad line, a cold — choose <b>Keep</b>.</li>
+  </ol>
+  <figure class="half"><img src="media/voice-sample.png" alt="One voice sample"><figcaption>A suspect sample: it sounds more like Jordan (0.83) than like Tom (0.76).</figcaption></figure>
+  <figure><img src="media/voice-cleanup.gif" alt="Setting a sample aside"><figcaption><span class="anim">ANIMATION</span>On the voice map: open Tom, click a red dot, set the sample aside. The map is redrawn without it and Tom has one suspect sample left.</figcaption></figure>
+  <p>To check the whole library at once, use <b>Clean up voice profiles…</b> at the top. It lists every sample that sounds
+  more like someone else than the person it is filed under, and very short samples that resemble nothing else of that person.
+  Untick any you want to keep and press <b>Set aside</b>. Samples you named yourself are never set aside automatically; they
+  are listed separately for you to decide.</p>
+  <figure><img src="media/voice-cleanup.png" alt="Clean up voice profiles"><figcaption>Clean up voice profiles: what would be set aside, and why.</figcaption></figure>
+  <div class="tip"><b>Nothing is lost</b>Set-aside samples stay in the database, just unused, and Attune saves a backup of
+  the voice database first (Attune/backups). Two people who sound alike will always sit close together; the aim is that
+  each cluster only holds that person's own samples.</div>
+  <h3>Reset</h3>
+  <p><b>Reset voice…</b> on a profile, or <b>Reset voice profiles…</b> for everyone (or only the samples imported from Quill),
+  forgets the voice samples; people, names and companies stay. Attune learns the voices again as you name speakers. Voiceprints
+  never leave your Mac.</p>
+</section>
+
+<section id="settings">
+  <h2>Settings</h2>
+  <p>Settings has seven tabs. Most changes apply when you press <b>Save settings</b>; languages, formats and Tokenomics prices
+  are saved right away.</p>
+  <h3>General: engines and AI</h3>
+  <figure><img src="media/settings.png" alt="Settings, General"><figcaption>Settings › General.</figcaption></figure>
+  <ul>
+    <li><b>Transcription engine</b> — OpenAI (cloud, fast), Local Whisper (on your Mac, all languages) or Apple
+      SpeechTranscriber (on your Mac, fastest; English, German and French). <b>Engine for confidential meetings</b> is always
+      one that runs on your Mac.</li>
+    <li><b>AI for topics, client detection and outputs</b> — the OpenAI or Anthropic API with your own key, your Claude or
+      ChatGPT subscription through their command-line tool (no API key, no cost per meeting), or the built-in model that runs
+      entirely on your Mac. Each has a main model and a lighter <i>model during meetings</i> for the live client and topic
+      detection. <b>Test AI provider</b> checks it works.</li>
+    <li><b>Display</b> — text size of the whole app.</li>
+  </ul>
+  <h3>Recording</h3>
+  <figure><img src="media/settings-recording.png" alt="Settings, Recording"><figcaption>Settings › Recording.</figcaption></figure>
+  <ul>
+    <li><b>Microphone</b> and <b>Transcribe while recording</b> (a live transcript every few minutes; same cost, never for
+      confidential meetings).</li>
+    <li><b>Languages spoken in your meetings</b> — transcription only chooses between the languages you tick, so tick every
+      language you use.</li>
+    <li><b>When a Teams / WhatsApp call is detected</b> — how fast Attune reacts, and whether it starts and stops recording by
+      itself instead of asking.</li>
+    <li><b>Capture shared slides</b> (experimental) — keeps every slide shown in the call and reads it; see <a href="#slides">Slides</a>.</li>
+    <li><b>Discard recordings shorter than</b> — for calls that went to voicemail. <b>Audio storage</b> — compressed (about
+      45 MB per hour) or WAV.</li>
+  </ul>
+  <h3>Output</h3>
+  <figure class="half"><img src="media/settings-output.png" alt="Settings, Output"><figcaption>Settings › Output.</figcaption></figure>
+  <ul>
+    <li><b>Output language</b> for AI texts such as slide descriptions, and the <b>transcript format</b> (Markdown or text).</li>
+    <li><b>How I write</b> and <b>Examples of my writing</b> — the drafts from voice notes follow these.</li>
+    <li><b>Output folders</b> — where <b>Publish</b> saves the transcript, for example your Obsidian vault.</li>
+  </ul>
+  <h3>Output formats</h3>
+  <figure><img src="media/settings-formats.png" alt="Settings, Output formats"><figcaption>Settings › Output formats: each format is an instruction for the AI.</figcaption></figure>
+  <p>The formats under <b>Create output</b>. Edit the built-in ones (<b>Restore default</b> brings them back), duplicate one, or
+  make your own; the chips insert the title, client, date, participants or your own name. See <a href="#outputs">Minutes, Teams
+  and WhatsApp messages</a>.</p>
+  <h3>Import</h3>
+  <figure class="half"><img src="media/settings-import.png" alt="Settings, Import"><figcaption>Settings › Import: migrate from Quill.</figcaption></figure>
+  <p>Brings over contacts, voice profiles built from your Quill recordings and, if you want, past meetings with Quill's notes.
+  Quill's data is only read; running it again only adds what's new. Profiles you already changed in Attune are listed so you
+  can choose whether Quill may update them.</p>
+  <h3>Backup</h3>
+  <figure class="half"><img src="media/settings-backup.png" alt="Settings, Backup"><figcaption>Settings › Backup: back up and restore.</figcaption></figure>
+  <p>One file with your settings, formats, meetings, people and voice profiles; audio and API keys are optional. Keep it on iCloud
+  Drive or an external disk. <b>Restore</b> moves to a new Mac or back to an earlier state; Attune first saves a safety backup of
+  what it replaces.</p>
+  <h3>Tokenomics</h3>
+  <p>What the AI work costs — see the next chapter.</p>
+</section>
+
+<section id="tokens">
+  <h2>Tokenomics: what it costs</h2>
+  <p>Every AI request is counted: how many tokens, what it cost, and what it was for. Settings › <b>Tokenomics</b> shows it per day,
+  month, purpose, client, meeting and voice note, so you see what your meeting habits cost.</p>
+  <figure><img src="media/tokenomics.png" alt="Tokenomics"><figcaption>The whole page: totals, per day, per month, what it's spent on, per client, per meeting, per voice note and per model.</figcaption></figure>
+  <h3>Period and Tokens or Cost</h3>
+  <p>At the top choose the period (7, 30 or 90 days, 12 months, or all) and whether every number shows <b>Tokens</b> or <b>Cost</b>.
+  Hover a bar for the details of that day or month.</p>
+  <figure><img src="media/tokenomics.gif" alt="Tokenomics periods"><figcaption><span class="anim">ANIMATION</span>Changing the period, switching to cost, and the details per day.</figcaption></figure>
+  <h3>The four tiles</h3>
+  <figure class="half"><img src="media/tokenomics-cost.png" alt="Tokenomics tiles"><figcaption>The tiles, showing cost.</figcaption></figure>
+  <ul>
+    <li><b>Tokens</b> — everything sent to the AI (in) and written by it (out), and the number of requests.</li>
+    <li><b>Cost</b> — the total for the period. An asterisk means some requests have no price yet (see below).</li>
+    <li><b>Per meeting</b> and <b>Per meeting hour</b> — the average, the most useful number to compare: a long meeting with
+      minutes and a Teams message costs more than a short one with none.</li>
+  </ul>
+  <h3>What it's spent on, and per client</h3>
+  <figure><img src="media/tokenomics-spent.png" alt="Spent on and per client"><figcaption>By purpose (transcription, topics, minutes, Ask AI, voice notes …) and by client.</figcaption></figure>
+  <p><b>What it's spent on</b> shows which work uses the most: voice notes, topics, minutes and other outputs, Ask AI,
+  search, and the live topics if <i>Transcribe while recording</i> is on. <b>Per client</b> adds the number of meetings and hours, so you see which client
+  relationship costs what.</p>
+  <h3>Per meeting and per voice note</h3>
+  <figure><img src="media/tokenomics-meetings.png" alt="Per meeting"><figcaption>Per meeting: length, tokens, cost, cost per hour and what it was spent on. Click a column to sort, a meeting to open it.</figcaption></figure>
+  <p>Sort by <b>Per hour</b> to find meetings that were unusually expensive — usually many outputs, a long Ask AI conversation or
+  re-processing. Voice notes have their own table below it.</p>
+  <h3>Models and what is measured</h3>
+  <figure><img src="media/tokenomics-models.png" alt="Models"><figcaption>Every route and model, with what is measured.</figcaption></figure>
+  <table>
+    <tr><th>Route</th><th>Tokens</th><th>Cost</th></tr>
+    <tr><td>Claude subscription</td><td>exact</td><td>the API-equivalent price Claude reports — not what your subscription costs</td></tr>
+    <tr><td>Anthropic API</td><td>exact</td><td>Anthropic list prices</td></tr>
+    <tr><td>OpenAI, ChatGPT subscription (Codex)</td><td>exact</td><td>only after you enter a price per million tokens in this table</td></tr>
+    <tr><td>Built-in model</td><td>counted on your Mac</td><td>free</td></tr>
+    <tr><td>OpenAI transcription</td><td>audio minutes</td><td>per minute</td></tr>
+  </table>
+  <p>When a model has no price, the table shows two boxes: enter the price per million input and output tokens and press
+  <b>Save price</b>; earlier requests are re-priced too. Transcription with Whisper or Apple, and Apple's on-device search, use no
+  tokens. Counting started on 15 October 2026; earlier requests weren't recorded.</p>
+  <div class="tip"><b>On a subscription?</b>With Claude or ChatGPT through their command-line tool you pay your plan, not per
+  request. The cost shown is what the same work would cost on the API — useful to see how much of your plan's usage Attune takes.</div>
+</section>
+
+<section id="privacy">
+  <h2>Privacy and confidential meetings</h2>
+  <ul>
+    <li>Everything Attune stores is on your Mac, in <code>~/Library/Application Support/Attune/</code>. There's no Attune server and no telemetry.</li>
+    <li><b>Confidential</b> (tick it before recording, or choose it when a call is detected): transcription on your Mac, speakers matched locally, no cloud AI.
+      With the built-in model as AI provider, minutes and Ask AI still work — entirely on your Mac.</li>
+    <li>Cloud features send only what they need: the audio to OpenAI if OpenAI transcribes; the transcript to your AI provider for minutes and Ask AI. Voiceprints never leave your Mac.</li>
+    <li>Deleted meetings go to the macOS Bin, and every deletion is logged.</li>
+  </ul>
+</section>
+
+<section id="keys">
+  <h2>Keyboard shortcuts</h2>
+  <table>
+    <tr><th>Keys</th><th>Where</th><th>Does</th></tr>
+    <tr><td><kbd>⌃⌥N</kbd></td><td>any app</td><td>Start a voice note; again to save it</td></tr>
+    <tr><td><kbd>⌃⌥S</kbd></td><td>any app, during a recording</td><td>Capture the slide shared right now</td></tr>
+    <tr><td><kbd>⌥ Space</kbd> (hold)</td><td>Meetings</td><td>Voice command: "open the last meeting with Priya"</td></tr>
+    <tr><td><kbd>⌘R</kbd> · <kbd>⌘P</kbd> · <kbd>⌘S</kbd></td><td>Attune</td><td>Start · pause/resume · stop recording</td></tr>
+    <tr><td><kbd>Space</kbd></td><td>a meeting</td><td>Play from the selected line</td></tr>
+    <tr><td><kbd>Delete</kbd></td><td>a meeting</td><td>Remove the selected line (with undo)</td></tr>
+    <tr><td><kbd>⌘↵</kbd></td><td>an output</td><td>Apply the AI change you typed</td></tr>
+    <tr><td><kbd>⌥</kbd>-click a heading</td><td>Meetings, Voice notes</td><td>Fold or unfold everything at that level</td></tr>
+  </table>
+</section>
+
+<section id="licence">
+  <h2>Licence</h2>
+  <p>Attune needs a licence for recording and AI features. Without one — or when it has expired — Attune opens
+  <b>read-only</b>: your meetings, notes and minutes stay readable and can be copied or exported, but you can't record or
+  create new outputs.</p>
+  <h3>Enter a licence</h3>
+  <ul>
+    <li>A personal copy of Attune has your licence built in — nothing to do.</li>
+    <li>Otherwise you receive a small <b>.attunelicense</b> file: double-click it, or choose <b>Attune › Enter Licence…</b>
+      (also on the licence screen and in Settings › General).</li>
+  </ul>
+  <p>Settings › General shows who the licence is for and until when; <b>About Attune</b> shows it too.</p>
+  <h3>A licence for one Mac</h3>
+  <p>Some licences are tied to one Mac. The licence screen shows <b>this Mac's code</b> with a Copy button — send it when you
+  ask for a licence. The code is derived from your Mac's hardware ID; it identifies nothing else and is never sent anywhere by Attune.</p>
+  <div class="tip"><b>Private by design</b>The licence is checked on your Mac only. Attune doesn't contact any server, now or later.</div>
+</section>
+
+<section id="trouble">
+  <h2>Troubleshooting and FAQ</h2>
+  <details><summary>My voice is missing, or the "Me" level stays flat</summary>
+    <p>macOS may not have given Attune microphone access: System Settings › Privacy &amp; Security › Microphone. Check which microphone Attune uses in Settings › Recording — AirPods switching in or out changes it.</p></details>
+  <details><summary>The other participants are missing</summary>
+    <p>Allow <b>System Audio Recording</b> for Attune in System Settings › Privacy &amp; Security. With headphones, make sure the call's sound goes through the Mac (not a separate phone).</p></details>
+  <details><summary>Lines of the other participants appear under my name</summary>
+    <p>Without headphones your microphone picks them up. Attune removes most of this echo; delete leftovers with <kbd>Delete</kbd>. Headphones avoid it completely.</p></details>
+  <details><summary>The wrong person is named</summary>
+    <p>Click the name and re-assign — for one line, or for everyone in that voice group. Attune learns from it for later meetings.</p></details>
+  <details><summary>Minutes come out in the wrong language</summary>
+    <p>Attune writes outputs in the language most of the meeting was spoken in. To force a language, use <i>Change this text with AI</i>: "translate to English".</p></details>
+  <details><summary>Nothing arrives from the iPhone</summary>
+    <p>Both devices need the same Apple ID with iCloud Drive on. The iPhone's History shows <i>Waiting</i> until it's online; the first upload of a new install can take a few minutes.</p></details>
+  <details><summary>Attune says it isn't licensed</summary>
+    <p>Double-click your .attunelicense file, or Attune › Enter Licence…. If it says the licence is for another Mac, ask for a
+    new one with the code from the licence screen; if it has expired, ask for a renewal. Your data is untouched either way.</p></details>
+  <details><summary>Attune doesn't start</summary>
+    <p>Look at <code>~/Library/Logs/Attune/server.log</code> and send it along when you <a href="#support">ask for help</a>.</p></details>
+</section>
+
+<section id="support">
+  <h2>Support</h2>
+  <p>Can't find the answer here? Write to <a href="mailto:support@crankywalrus.dev">support@crankywalrus.dev</a>.</p>
+  <h3>Help us help you</h3>
+  <ul>
+    <li>Your Attune version (<b>Attune › About Attune</b>) and macOS version.</li>
+    <li>What you did, what you expected, and what happened instead. A screenshot helps.</li>
+    <li>For problems with recording or starting: the log file <code>~/Library/Logs/Attune/server.log</code>.</li>
+  </ul>
+  <div class="note"><b>Before you send anything</b>Logs and screenshots can contain names and meeting titles. Look at them first
+  and remove what you don't want to share. Never send recordings or transcripts of confidential meetings.</div>
+  <h3>Licences</h3>
+  <p>For a new licence, a renewal or a licence for another Mac, write to the same address and include this Mac's code from the
+  licence screen (see <a href="#licence">Licence</a>).</p>
+  <h3>Your data and privacy</h3>
+  <p>Everything Attune stores stays on your Mac; we can't see your meetings, notes or voices. Read the
+  <a href="/attune/privacy/">privacy policy</a>, or write to <a href="mailto:privacy@crankywalrus.dev">privacy@crankywalrus.dev</a>
+  with questions about it.</p>
+</section>
+
+</main>
+</div>
+<footer class="site-foot"><span>© 2026 Cranky Walrus · <a href="/attune/">Attune</a> · <a href="/attune/privacy/">Privacy</a> ·
+  <a href="mailto:support@crankywalrus.dev">support@crankywalrus.dev</a></span><span>All screenshots show invented people and companies.</span></footer>
+<script>
+// highlight the chapter in view; filter chapters with the search box
+const links = [...document.querySelectorAll("#toc a")];
+const secs = links.map(a => document.querySelector(a.getAttribute("href")));
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
+}), { rootMargin: "-20% 0px -70% 0px" });
+secs.forEach(s => s && io.observe(s));
+document.getElementById("find").addEventListener("input", e => {
+  const q = e.target.value.trim().toLowerCase();
+  secs.forEach((s, i) => {
+    const hit = !q || s.textContent.toLowerCase().includes(q);
+    s.style.display = hit ? "" : "none";
+    links[i].parentElement.style.display = hit ? "" : "none";
+  });
+});
+</script>
+</body>
+</html>
