@@ -48,6 +48,9 @@ footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 26px 0 50
 footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .prose { max-width: 760px; }
 .prose h2 { font-size: 22px; margin-top: 36px; }
+.prose table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 12px 0 18px; }
+.prose th, .prose td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+.prose th { color: var(--muted); font-weight: 600; }
 @media (max-width: 760px) {
   .split, .split.rev { grid-template-columns: 1fr; } .split.rev > :first-child { order: 0; }
   header.top nav a { margin-left: 14px; } .hero { padding: 40px 0 28px; }
