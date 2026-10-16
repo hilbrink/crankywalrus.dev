@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Attune privacy policy</title>
-<meta name="description" content="How Attune for Mac and iPhone handles your data.">
+<meta name="description" content="How Attune for Mac and iPhone and crankywalrus.dev handle your data.">
 <link rel="icon" href="/attune/img/icon.png">
 <link rel="stylesheet" href="/style.css">
 </head>
@@ -16,34 +16,50 @@
   </header>
   <div class="prose">
     <h1>Attune privacy policy</h1>
-    <p class="note">Last updated 16 October 2026. Applies to Attune for Mac and Attune for iPhone.</p>
+    <p class="note">Last updated 16 October 2026. Applies to Attune for Mac, Attune for iPhone, the website
+      crankywalrus.dev and support by email.</p>
 
     <h2>The short version</h2>
-    <p>Attune has no servers and Cranky Walrus collects nothing about you through the app. Your recordings, transcripts,
-      notes and voice library are stored on your own devices. Data only leaves your devices when you choose a cloud
-      service for transcription or AI, and then only goes to that service. Confidential meetings never leave your Mac.
-      There is no advertising, no tracking and no analytics.</p>
+    <p>Attune has no servers. Your recordings, transcripts, notes and voice library stay on your own devices, and I cannot
+      see them. Data only leaves your devices when you choose a cloud service for transcription or AI, and then it goes
+      directly to that service under your own account. Confidential meetings never leave your Mac. There is no advertising,
+      no tracking, no analytics and no cookies. I only process personal data myself when you visit this website, email me
+      or get a licence from me, as described below.</p>
 
-    <h2>Who is responsible</h2>
-    <p>Attune is made by Cranky Walrus (<a href="https://crankywalrus.dev">crankywalrus.dev</a>). For anything about this
-      policy or your data, write to <a href="mailto:privacy@crankywalrus.dev">privacy@crankywalrus.dev</a>.</p>
+    <h2>1. Who is responsible</h2>
+    <p>Attune is made by one person. Cranky Walrus is the name I publish my software under; it is not a company. The
+      person responsible for the processing described in this policy (the controller) is:</p>
+    <p>Niels Hilbrink<br><!-- scan:ignore: published on purpose (controller identity) -->
+      Chemin de la Chanee 10<br>
+      2016 Cortaillod, Switzerland<br>
+      Email: <a href="mailto:privacy@crankywalrus.dev">privacy@crankywalrus.dev</a></p>
 
-    <h2>What Attune stores, and where</h2>
+    <h2>2. Which law applies</h2>
+    <p>I live in Switzerland and process personal data under the Swiss Federal Act on Data Protection (FADP). Where I offer
+      Attune to people in the European Union or the European Economic Area, I also comply with the EU General Data
+      Protection Regulation (GDPR). The terms used in this policy (such as personal data, controller, processing) have the
+      meaning they have in the GDPR.</p>
+
+    <h2>3. Attune: your data stays on your devices</h2>
+    <p>Everything Attune creates is processed on your Mac and iPhone. I do not receive, store or have access to it. For this
+      content <b>you are the controller</b>, not me.</p>
     <ul>
       <li><b>On your Mac</b> (in <code>~/Library/Application Support/Attune/</code>): meeting recordings, transcripts,
         minutes and other outputs, slides captured during meetings, voice notes, the people you name (name, company,
         pronouns), the voice library, your settings, a log of AI token usage, and your licence file.</li>
       <li><b>Voiceprints</b>: to recognise who is speaking, Attune keeps a numerical voiceprint of each person you name.
-        Voiceprints are biometric data. They are created and kept only on your Mac, never sent to any service, and never
-        used for anything other than labelling speakers in your own transcripts.</li>
+        Voiceprints are biometric data. They are created and kept only on your Mac, never sent to any service, and only
+        used to label speakers in your own transcripts.</li>
       <li><b>On your iPhone</b>: recordings until your Mac has received them, and the summaries and drafts your Mac sends
         back.</li>
       <li><b>In your iCloud</b> (iPhone app only): recordings travel from your iPhone to your Mac through your own iCloud
-        Drive, in a private app folder. The Mac removes the audio from iCloud once it has it. Apple stores this under
-        your Apple Account; Cranky Walrus has no access to it.</li>
+        Drive, in a private app folder, under your Apple Account. The Mac removes the audio from iCloud once it has it. I
+        have no access to it.</li>
+      <li>Licences are checked on your Mac, without a network connection. Attune contains no analytics, no advertising, no
+        tracking and no crash reporting of its own, and it never contacts a server of mine.</li>
     </ul>
 
-    <h2>Permissions Attune asks for</h2>
+    <h3>Permissions Attune asks for</h3>
     <table>
       <tr><th>Permission</th><th>Used for</th></tr>
       <tr><td>Microphone (Mac and iPhone)</td><td>Recording your voice in meetings and voice notes.</td></tr>
@@ -54,85 +70,137 @@
         slides shown in a call.</td></tr>
       <tr><td>iCloud (iPhone app)</td><td>Sending recordings to your Mac, as described above.</td></tr>
     </table>
-    <p>You can withdraw any of these at any time in System Settings (Mac) or Settings (iPhone) › Privacy &amp;
-      Security. Attune keeps working without the optional ones.</p>
+    <p>You can withdraw any of these at any time in System Settings (Mac) or Settings (iPhone) › Privacy &amp; Security.
+      Attune keeps working without the optional ones.</p>
 
-    <h2>What leaves your devices, and to whom</h2>
-    <p>Nothing is sent to a cloud service until you choose that service in Attune's settings. Data is then sent directly
-      from your Mac to that service, over an encrypted connection, only to perform the task you asked for:</p>
+    <h3>Cloud services you choose</h3>
+    <p>Nothing is sent to a cloud service until you choose one in Attune's settings. Data is then sent directly from your
+      Mac to that service, over an encrypted connection, using your own API key or subscription. The provider processes it
+      under your agreement with them; I am not involved and receive nothing.</p>
     <table>
-      <tr><th>Service you choose</th><th>What is sent</th><th>Provider's policy</th></tr>
+      <tr><th>Service</th><th>What is sent</th><th>Provider</th></tr>
       <tr><td>OpenAI transcription</td><td>The meeting or voice note audio.</td>
-        <td><a href="https://openai.com/policies/privacy-policy/">OpenAI</a></td></tr>
+        <td>OpenAI (<a href="https://openai.com/policies/privacy-policy/">privacy policy</a>)</td></tr>
       <tr><td>OpenAI API, or a ChatGPT subscription (Codex)</td><td>For minutes, topics, client detection, Ask AI, voice
-        note summaries and drafts: the transcript or note text, your notes, the names of the participants, and images of
-        captured slides.</td><td><a href="https://openai.com/policies/privacy-policy/">OpenAI</a></td></tr>
+        note summaries and drafts: the transcript or note text, your notes, participants' names, and images of captured
+        slides.</td><td>OpenAI (<a href="https://openai.com/policies/privacy-policy/">privacy policy</a>)</td></tr>
       <tr><td>Anthropic API, or a Claude subscription (Claude Code)</td><td>The same as above.</td>
-        <td><a href="https://www.anthropic.com/legal/privacy">Anthropic</a></td></tr>
+        <td>Anthropic (<a href="https://www.anthropic.com/legal/privacy">privacy policy</a>)</td></tr>
       <tr><td>Built-in model, Local Whisper or Apple's speech engine</td><td>Nothing: these run entirely on your Mac.</td>
         <td>—</td></tr>
     </table>
     <ul>
-      <li><b>Confidential meetings</b> are always transcribed on your Mac and are never sent to any cloud service.</li>
-      <li>You use these services with <b>your own account</b> (your API key or your subscription). The provider processes
-        the data under your agreement with them. With the OpenAI and Anthropic APIs, the providers state that API data is
-        not used to train their models by default; with a ChatGPT or Claude subscription, the data settings of your own
-        account apply. We only support providers whose terms protect your data at least as well as this policy.</li>
+      <li><b>Confidential meetings</b> are always transcribed on your Mac and never sent to any cloud service.</li>
+      <li>These providers are based in the United States. Whether your data is transferred there, and on which safeguards,
+        depends on your agreement with them (for business accounts usually a data processing agreement with standard
+        contractual clauses). With the OpenAI and Anthropic APIs, the providers state that API data is not used to train
+        their models by default; with a ChatGPT or Claude subscription, your own account's data settings apply.</li>
       <li>You can switch to on-device processing at any time (Settings › General); from then on nothing more is sent.</li>
       <li><b>Model downloads</b>: the speech and speaker models, and the optional built-in AI model, are downloaded once
-        from Hugging Face. That is an ordinary file download; none of your content is sent.</li>
+        from Hugging Face. As with any download, Hugging Face sees your IP address; none of your content is sent.</li>
       <li>Minutes, Teams and WhatsApp messages are only copied to your clipboard or saved to folders you choose. Attune
         does not send messages on your behalf.</li>
     </ul>
 
-    <h2>What Cranky Walrus collects</h2>
-    <p>Nothing through the app. Attune contains no analytics, no advertising, no tracking and no crash reporting, does not
-      contact any Cranky Walrus server, and does not share data with data brokers. Token usage shown in Attune is counted
-      on your Mac and stays there. Licences are checked on your Mac, without a network connection.</p>
-    <p>If you buy a licence from us directly, we receive the name, email address and (for a licence tied to one Mac) the
-      machine code you give us. We use them only to issue your licence and to answer your questions, keep them as long as
-      your licence is valid plus the period tax law requires, and share them with no one. Purchases through the App Store
-      are handled by Apple; we do not receive your payment details.</p>
+    <h3>If you use Attune at work: recording other people</h3>
+    <p>Meetings contain other people's voices and words, and Attune can learn their voiceprints. For this processing you
+      (or your employer) are the controller. Under the GDPR and the FADP that means, among other things: tell participants
+      that you record and transcribe, have a legal basis for it (for voiceprints, which are biometric data, usually their
+      explicit consent), choose a cloud service only if you may share the meeting with it, and delete a person's
+      voiceprints in Speakers when they ask. Follow your organisation's policies and the law where you and they are.</p>
 
-    <h2>How long data is kept</h2>
+    <h2>4. What I process myself</h2>
+
+    <h3>4.1 Visiting crankywalrus.dev</h3>
+    <p>The website is hosted on GitHub Pages (GitHub, Inc., USA). When you open a page, GitHub processes your IP address,
+      the date and time, the page requested, and your browser and operating system, in order to deliver the page and protect
+      the service against abuse. GitHub keeps these logs according to its own
+      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">privacy statement</a>;
+      I do not receive them.</p>
+    <p><b>Legal basis:</b> my legitimate interest in a secure and working website (Art. 6(1)(f) GDPR). The site sets no
+      cookies, contains no analytics or tracking, and loads no fonts or scripts from other services.</p>
+
+    <h3>4.2 Emailing me (support and privacy questions)</h3>
+    <p>When you write to support@crankywalrus.dev or privacy@crankywalrus.dev, I process your email address, name, the
+      content of your message and anything you attach (for example a log file or a screenshot), to answer you and to solve
+      the problem. Please don't send recordings or transcripts unless I ask; remove anything confidential from logs.</p>
+    <p><b>Legal basis:</b> our agreement, or steps you asked for before one (Art. 6(1)(b) GDPR), and otherwise my legitimate
+      interest in answering your questions (Art. 6(1)(f) GDPR). <b>Retention:</b> I delete support correspondence
+      24 months after the matter is closed, unless I have to keep it longer by law.</p>
+
+    <h3>4.3 Getting a licence</h3>
+    <p><b>From me directly:</b> licences are free. I process your name, email address, your company if you give it, the licence details
+      (licence number, period, features) and, for a licence tied to one Mac, the machine code you send me. I use them to
+      issue and renew your licence and to help you with it.</p>
+    <p><b>Legal basis:</b> our agreement (Art. 6(1)(b) GDPR). <b>Retention:</b> licence data as long as your licence is valid
+      and for 2 years after it ends.</p>
+    <p><b>Through the App Store:</b> Apple distributes the app and handles the download under
+      <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. I do not receive your name or email address. If you have chosen to share analytics with app developers in your Apple device settings, Apple
+      gives me crash reports and usage statistics that do not identify you. You can turn this off in Settings › Privacy
+      &amp; Security › Analytics &amp; Improvements.</p>
+
+    <h2>5. Who receives data from me</h2>
+    <p>I do not sell personal data, share it for advertising or pass it to data brokers. I use these service providers,
+      who process data on my behalf:</p>
+    <table>
+      <tr><th>Provider</th><th>Purpose</th><th>Location</th></tr>
+      <tr><td>GitHub, Inc.</td><td>Hosting the website</td><td>USA</td></tr>
+      <tr><td>Google (Google Workspace)</td><td>Email</td><td>EU and USA</td></tr>
+    </table>
+    <p>I may also disclose data where the law requires it, for example to a court or authority.</p>
+
+    <h2>6. Transfers outside Switzerland and the EU</h2>
+    <p>Switzerland and the EU/EEA recognise each other's level of data protection. GitHub and Google are in the United
+      States and are certified under the EU-US Data Privacy Framework and its Swiss-US extension, which the European
+      Commission and the Swiss Federal Council recognise as providing adequate protection. Where a provider is not
+      certified, I rely on the standard contractual clauses in its terms, as recognised by the European Commission and the
+      Swiss Federal Data Protection and Information Commissioner (FDPIC).</p>
+
+    <h2>7. How long data is kept</h2>
     <ul>
-      <li>Everything on your devices stays until you delete it.</li>
-      <li>Recordings in iCloud are removed as soon as your Mac has received them.</li>
-      <li>Cloud services keep what they receive according to their own policies and your account settings (linked above).</li>
+      <li>Everything Attune stores on your devices stays until you delete it. Recordings in iCloud are removed as soon as
+        your Mac has received them.</li>
+      <li>Support emails and licence data: as stated in section 4.</li>
+      <li>Cloud services you chose keep what they receive according to their own policies and your account settings.</li>
     </ul>
 
-    <h2>Deleting your data</h2>
+    <h2>8. Your rights</h2>
+    <p>Under the FADP and the GDPR you have the right to:</p>
     <ul>
-      <li>Delete meetings and voice notes in Attune; they go to the macOS Bin.</li>
-      <li>Delete voiceprints in Speakers: per sample, per person (<i>Reset voice</i>) or all at once (<i>Reset voice
-        profiles</i>).</li>
-      <li>Remove the folder <code>~/Library/Application Support/Attune/</code> to delete everything Attune stored on your
-        Mac. Deleting the iPhone app removes its local data.</li>
-      <li>To have licence details deleted, write to <a href="mailto:privacy@crankywalrus.dev">privacy@crankywalrus.dev</a>.</li>
+      <li>find out whether I process personal data about you and receive a copy of it (access);</li>
+      <li>have incorrect data corrected and incomplete data completed;</li>
+      <li>have your data deleted, or its use restricted;</li>
+      <li>receive data you gave me in a common, machine-readable format, or have it sent to someone else (portability);</li>
+      <li>object to processing based on my legitimate interests;</li>
+      <li>withdraw consent you have given, with effect for the future.</li>
+    </ul>
+    <p>Write to <a href="mailto:privacy@crankywalrus.dev">privacy@crankywalrus.dev</a>. I answer within 30 days and may ask
+      you to confirm your identity. These rights can be limited by law.</p>
+    <p>For data Attune keeps on your own devices you can do this yourself: delete meetings and voice notes in Attune (they
+      go to the macOS Bin); delete voiceprints in Speakers per sample, per person (<i>Reset voice</i>) or all at once
+      (<i>Reset voice profiles</i>); remove <code>~/Library/Application Support/Attune/</code> to delete everything on your
+      Mac; delete the iPhone app to remove its data.</p>
+    <p><b>Complaints:</b> you can complain to the Swiss Federal Data Protection and Information Commissioner
+      (<a href="https://www.edoeb.admin.ch">edoeb.admin.ch</a>), or, if you live in the EU/EEA, to the data protection
+      authority in your country. I'd appreciate the chance to sort it out with you first.</p>
+
+    <h2>9. Other information</h2>
+    <ul>
+      <li><b>Do you have to give me data?</b> No. Without your email address I can't answer you, and without licence
+        details I can't issue a licence.</li>
+      <li><b>Automated decisions:</b> I make no decisions about you based solely on automated processing, and I do not
+        profile you.</li>
+      <li><b>Security:</b> the website and email use encrypted connections. Attune keeps your data on your devices; I
+        recommend FileVault on your Mac and a passcode on your iPhone.</li>
+      <li><b>Children:</b> Attune is a tool for work meetings and is not directed at children. I do not knowingly process
+        children's data.</li>
     </ul>
 
-    <h2>Your rights</h2>
-    <p>Depending on where you live (for example under the GDPR), you have the right to access, correct, delete and receive
-      a copy of personal data about you, to object to or restrict its use, and to complain to your data protection
-      authority. Since everything Attune creates is on your own devices, you can do most of this in the app yourself.
-      For licence details, contact us.</p>
-
-    <h2>Recording other people</h2>
-    <p>Meetings include other people's voices, and Attune can learn their voiceprints. You are responsible for telling
-      participants that you record, for getting their consent where required, and for following the law and your
-      organisation's policies where you and they are. Delete a person's voiceprints in Speakers if they ask you to.</p>
-
-    <h2>Children</h2>
-    <p>Attune is a tool for work meetings and is not directed at children. We do not knowingly collect data from children.</p>
-
-    <h2>Changes to this policy</h2>
+    <h2>10. Changes to this policy</h2>
     <p>If this policy changes, the new version is published on this page with a new date. Changes that affect how your
       data is handled are also mentioned in the release notes of the app.</p>
-
-    <h2>Contact</h2>
-    <p>Questions or requests about this policy: <a href="mailto:privacy@crankywalrus.dev">privacy@crankywalrus.dev</a>.</p>
   </div>
 </div>
-<footer><div class="wrap"><span>© 2026 Cranky Walrus</span><span><a href="/attune/">Attune</a></span></div></footer>
+<footer><div class="wrap"><span>© 2026 Cranky Walrus</span><span><a href="/attune/">Attune</a> · <a href="/attune/help/">Help</a></span></div></footer>
 </body>
 </html>
